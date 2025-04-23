@@ -1,0 +1,35 @@
+$bg-color: #f3f7fa;
+.app {
+  background-color: $bg-color;
+  min-width: 575px;
+  width: calc(100% + var(--scrollbar-width, 0));
+  padding-bottom: 50px;
+  min-height: calc(100vh - 50px);
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 754px;
+  margin: 0 auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: max-content 3fr;
+  grid-template-rows: max-content 1fr max-content;
+  grid-template-areas:
+    'filter sort'
+    'filter ticket-list'
+    '. button';
+  gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'filter'
+      'sort'
+      'ticket-list'
+      'button';
+  }
+}

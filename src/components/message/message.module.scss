@@ -1,0 +1,40 @@
+@mixin commonStyles {
+  padding: 10px;
+  border-radius: 5px;
+  will-change: opacity;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s;
+  text-align: center;
+  align-self: baseline;
+  pointer-events: none;
+}
+
+.error {
+  color: red;
+  background-color: #fdd;
+  border: 1px solid red;
+  @include commonStyles;
+}
+
+.info {
+  color: blue;
+  background-color: #ddf;
+  border: 1px solid blue;
+  @include commonStyles;
+}
+
+.default {
+  @include commonStyles;
+  color: black;
+  background-color: #eee;
+  border: 1px solid black;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

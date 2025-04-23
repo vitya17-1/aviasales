@@ -1,0 +1,44 @@
+.sort-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  & + .sort-label {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 15px;
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 20px;
+    border-left: 1px solid #d1d1d1;
+    text-align: center;
+    align-content: center;
+    &:first-of-type {
+      border-radius: 5px 0 0 5px;
+      border-left: none;
+    }
+    &:last-of-type {
+      border-radius: 0 5px 5px 0;
+    }
+    &:hover:not(:disabled) {
+      background: rgb(241, 252, 255);
+      cursor: url('../../assets/cursor.svg'), pointer;
+    }
+  }
+
+  &:checked:not(:disabled) + .sort-label {
+    scale: 1.03;
+    transition: ease-in-out 0.1s;
+    background: rgb(33, 150, 243);
+    color: white;
+  }
+
+  &:disabled + .sort-label {
+    filter: grayscale(100%);
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    border-left: 1px solid #d1d1d1;
+  }
+}

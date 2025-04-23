@@ -1,0 +1,40 @@
+.segment {
+  /* Стили для сегмента билета */
+  display: grid;
+  grid-template-areas:
+    'route duration-title stops-count'
+    'time duration stops-cities';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: minmax(18px, auto) minmax(21px, auto);
+  font-weight: 600;
+  & span {
+    align-content: center;
+  }
+  &__route {
+    /* Стили для маршрута */
+    color: #a0b0b9;
+    grid-area: route;
+  }
+  &__duration-title {
+    /* Стили для заголовка времени */
+    color: #a0b0b9;
+    grid-area: duration-title;
+  }
+  &__stops-count {
+    /* Стили для количества пересадок */
+    color: #a0b0b9;
+    grid-area: stops-count;
+  }
+  &__time {
+    /* Стили для времени */
+    grid-area: time;
+  }
+  &__duration {
+    /* Стили для длительности */
+    grid-area: duration;
+  }
+  &__stops-cities {
+    /* Стили для пересадок */
+    grid-area: stops-cities;
+  }
+}
